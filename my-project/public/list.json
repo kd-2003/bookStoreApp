@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Story Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 2,
+        "name": "Story Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 3,
+        "name": "Story Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 4,
+        "name": "Food Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 10,
+        "category": "Foods",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 5,
+        "name": "Music Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 30,
+        "category": "Songs",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 6,
+        "name": "Story Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 7,
+        "name": "Story Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 8,
+        "name": "Story Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 9,
+        "name": "Sports Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 50,
+        "category": "Sport",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 10,
+        "name": "Story Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 11,
+        "name": "Comedy Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 20,
+        "category": "Entartainment",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    },
+    {
+        "id": 12,
+        "name": "Story Book",
+        "title": "A collection of short stories from various authors.",
+        "price": 0,
+        "category": "Free",
+        "image": "https://www.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_24307396.htm#fromView=search&page=1&position=12&uuid=8a12e9ce-3fa0-49ef-81bc-065225ad9fe1&query=books"
+    }
+]
