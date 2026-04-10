@@ -4,8 +4,8 @@ import bookImage from '../../public/books.jpg';
 function Cards({item}) {
     return (
         <>
-            <div className="mt-3 dark:bg-white dark:text-black">
-                <div className="card dark:bg-white dark:text-black w-85 shadow-sm hover:scale-105 duration-300">
+            <div className="mt-3 dark:bg-gray-900 dark:text-white">
+                <div className="card dark:bg-gray-800 dark:text-white w-85 shadow-sm hover:scale-105 duration-300">
                     <figure>
                         <img
                             src= {bookImage} 

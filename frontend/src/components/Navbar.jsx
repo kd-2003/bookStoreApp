@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Login from './Login';
 import { useAuth } from '../context/AuthProvider';
 import Logout from './Logout';
@@ -24,16 +25,16 @@ function Navbar() {
   },[theme])
     const navItems = (
         <>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/course'>Course</a></li>
-            <li><a>Contact</a></li>
-            <li><a>About</a></li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/course'>Course</Link></li>
+            <li><Link to='/contact'>Contact</Link></li>
+            <li><Link to='/about'>About</Link></li>
         </>
     )
   return (
     <>
-      <div className=" max-w-screen-2xl dark:bg-white dark:text-black container mx-auto md:px-20 px-4 fixed top-0 left-0 right-0 z-50">
-        <div className="navbar bg-base-100 dark:bg-white dark:text-black shadow-lg">
+      <div className=" max-w-screen-2xl dark:bg-gray-900 dark:text-white container mx-auto md:px-20 px-4 fixed top-0 left-0 right-0 z-50">
+        <div className="navbar bg-base-100 dark:bg-gray-900 dark:text-white shadow-lg">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,7 +42,7 @@ function Navbar() {
       </div>
       <ul
         tabIndex="-1"
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        className="menu menu-sm dropdown-content bg-base-100 dark:bg-gray-800 rounded-box z-1 mt-3 w-52 p-2 shadow">
         {navItems}
       </ul>
     </div>
@@ -54,7 +55,7 @@ function Navbar() {
     </ul>
   </div>
   <div className="hidden md:block">
-    <label className="input dark:bg-white dark:text-black">
+    <label className="input dark:bg-gray-800 dark:text-white">
   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g
       strokeLinejoin="round"
@@ -67,7 +68,7 @@ function Navbar() {
       <path d="m21 21-4.3-4.3"></path>
     </g>
   </svg>
-  <input type="search" className="grow outline-none dark:bg-white dark:text-black" placeholder="Search" />
+  <input type="search" className="grow outline-none dark:bg-gray-800 dark:text-white" placeholder="Search" />
 </label>
   </div>
 
@@ -101,7 +102,7 @@ function Navbar() {
   {
     authUser ? (<Logout/>) : (
       <div className="">
-        <a className="btn rounded-md"
+        <a className="btn rounded-md bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800"
         onClick={() => {
           document.getElementById("my_modal_3").showModal()
         }}

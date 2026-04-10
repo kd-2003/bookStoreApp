@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useLocation, useNavigate, } from 'react-router-dom'
 import Login from './Login'
 import { useForm } from "react-hook-form"
@@ -10,6 +10,16 @@ function Signup() {
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
 
+  useEffect(() => {
+    // Open the signup modal when component mounts
+    setTimeout(() => {
+      const modal = document.getElementById('my_modal_4');
+      if (modal && modal.showModal) {
+        modal.showModal();
+      }
+    }, 100);
+  }, []);
+
   const {
       register,
       handleSubmit,
@@ -17,93 +27,111 @@ function Signup() {
     } = useForm()
   
     const onSubmit = async (data) => {
-      const userInfo = {
-        fullName: data.fullName,
-        email: data.email,
-        password: data.password,
-      }
-      await axios.post("http://localhost:8080/user/signup", userInfo)
-      .then((res)=> {
-        console.log(res.data)
-        if(res.data){
+      try {
+        const userInfo = {
+          fullName: data.fullName,
+          email: data.email,
+          password: data.password,
+        }
+        const res = await axios.post("http://localhost:8080/user/signup", userInfo);
+        if (res.data) {
           toast.success('Signup Successfully');
+          localStorage.setItem("Users", JSON.stringify(res.data.user));
+          const modal = document.getElementById('my_modal_4');
+          if (modal && modal.close) {
+            modal.close();
+          }
           navigate(from, { replace: true });
         }
-        localStorage.setItem("Users", JSON.stringify(res.data.user));
-      }).catch((err)=>{
-        if(err.response){
-          console.log(err);
-          toast.error(err.response.data.message);
-        }
-      });
+      } catch (err) {
+        console.log(err);
+        const errorMessage = err.response?.data?.message || 'Signup failed. Please try again.';
+        toast.error(errorMessage);
+      }
     };
 
 
   return (
     <>
-    <div className="flex h-screen items-center justify-center dark:bg-white dark:text-black">
-        <button className="btn" onClick={()=>document.getElementById('my_modal_4').showModal() }>Signup</button>
+    <div className="flex h-screen items-center justify-center dark:bg-gray-900 dark:text-white bg-white">
         <dialog id='my_modal_4' className="modal">
-          <div className="modal-box  dark:bg-white dark:text-black ">
+          <div className="modal-box dark:bg-gray-800 dark:text-white w-96">
             <form onSubmit={handleSubmit(onSubmit)} method="dialog">
-
-              <Link to="/" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Link>
+              <button 
+                type="button"
+                onClick={() => {
+                  const modal = document.getElementById('my_modal_4');
+                  if (modal && modal.close) modal.close();
+                }}
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              >
+                ✕
+              </button>
             
-            <h3 className="font-bold text-lg">Signup</h3>
-            <div className="mt-4 space-y-4">
-              <span>Name</span>
-              <br/>
-              <input type="text" 
-              placeholder="Enter your FullName" 
-              className="w-80 px-3 py-1 border rounded-md outline-none "
-              {...register("fullName", { required: true })}
+            <h3 className="font-bold text-lg mb-4">Signup</h3>
+            <div className="mt-4 space-y-3">
+              <label className="block text-sm font-semibold">Full Name</label>
+              <input 
+                type="text" 
+                placeholder="Enter your full name" 
+                className="w-full px-3 py-2 border rounded-md outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                {...register("fullName", { required: "Full name is required" })}
               />
-              <br/>
-              {errors.fullName && <span className="text-red-500">This field is required</span>}
+              {errors.fullName && <span className="text-red-500 text-sm">Full name is required</span>}
             </div>
 
-            <div className="mt-4 space-y-4">
-              <span>Email</span>
-              <br/>
-              <input type="email" 
-              placeholder="Enter your email" 
-              className="w-80 px-3 py-1 border rounded-md outline-none "
-              {...register("email", { required: true })}
+            <div className="mt-4 space-y-3">
+              <label className="block text-sm font-semibold">Email</label>
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="w-full px-3 py-2 border rounded-md outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                {...register("email", { required: "Email is required" })}
               />
-              <br/>
-              {errors.email && <span className="text-red-500">This field is required</span>}
+              {errors.email && <span className="text-red-500 text-sm">Email is required</span>}
             </div>
 
-            <div className="mt-4 space-y-4 ">
-              <span>Password</span>
-              <br/>
-              <input type="password" 
-              placeholder="Enter your password" 
-              className="w-80 px-3 py-1 border rounded-md outline-none "
-              {...register("password", { required: true })}
+            <div className="mt-4 space-y-3">
+              <label className="block text-sm font-semibold">Password</label>
+              <input 
+                type="password" 
+                placeholder="Enter your password" 
+                className="w-full px-3 py-2 border rounded-md outline-none dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                {...register("password", { required: "Password is required" })}
               />
-              <br/>
-               {errors.password && <span className="text-red-500">This field is required</span>}
+              {errors.password && <span className="text-red-500 text-sm">Password is required</span>}
             </div>
 
-            <div className="flex justify-around mt-4">
-              <button className="bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-200 cursor-pointer">Signup</button>
-              <p>Have Account?{" "} <button  
-                 className="underline text-blue-500 cursor-pointer" 
-                 onClick={() => {
-                  document.getElementById("my_modal_3").showModal()}}
-                  >
-                Login</button>
-                <Login/>
-                {" "}
-                </p>
+            <div className="flex flex-col gap-4 mt-6">
+              <button 
+                type="submit" 
+                className="w-full bg-pink-500 text-white rounded-md px-4 py-2 hover:bg-pink-700 duration-200 cursor-pointer font-semibold transition-all"
+              >
+                Signup
+              </button>
+              <p className="text-center text-sm">
+                Have Account?{" "} 
+                <button  
+                  type="button"
+                  className="underline text-blue-500 hover:text-blue-700 cursor-pointer font-semibold" 
+                  onClick={() => {
+                    const modal = document.getElementById('my_modal_4');
+                    if (modal && modal.close) modal.close();
+                    document.getElementById("my_modal_3").showModal();
+                  }}
+                >
+                  Login
+                </button>
+              </p>
             </div>
             </form>
           </div>
         </dialog>
+        
+        <Login/>
     </div>
     </>
-  )
+  );
 }
 
 export default Signup

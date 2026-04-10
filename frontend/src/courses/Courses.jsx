@@ -7,7 +7,7 @@ function Courses() {
   return (
     <>
        <Navbar/>
-       <div className="dark:bg-white dark:text-black pt-25">
+       <div className="dark:bg-gray-900 dark:text-white pt-25">
           <Course/>
        </div>
        <Footer/>

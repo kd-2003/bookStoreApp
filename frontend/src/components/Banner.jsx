@@ -13,7 +13,7 @@ function Banner() {
             <p className="text-xl">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum rem blanditiis, amet qui facere, similique delectus, iste quam aliquid ipsum numquam quaerat quisquam. Iste minus, vero voluptates dolores impedit blanditiis?
             </p>
-            <label className="input validator border-black dark:bg-white dark:text-black">
+            <label className="input validator border-black dark:bg-gray-800 dark:text-white">
                 <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g
                     strokeLinejoin="round"
