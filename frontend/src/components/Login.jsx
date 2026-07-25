@@ -17,7 +17,7 @@ function Login() {
         email: data.email,
         password: data.password,
       }
-      const res = await axios.post("http://localhost:8080/user/login", userInfo);
+      const res = await axios.post("https://bookstoreapp-5x3j.onrender.com/user/login", userInfo);
       if (res.data) {
         toast.success('Logged in Successfully');
         localStorage.setItem("Users", JSON.stringify(res.data.user));
